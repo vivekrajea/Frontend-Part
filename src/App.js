@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+//import DatasComponent from './components/DatasComponent';
+import CompData from './components/CompData';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+// import CreateDataComponent from './components/CreateDataComponent';
+import { AddDataComponent } from './components/AddDataComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <HeaderComponent />
+        <div className="container">
+          <Routes>
+            <Route exact path='/'  element={<CompData/>} />
+            <Route path="/data" element={<CompData />}></Route>
+            <Route path='/add-data' element={<AddDataComponent/>} />
+            <Route path='/edit-employee/:id' element={<AddDataComponent/>} />
+          </Routes>
+
+        </div>
+        <FooterComponent />
+      </Router>
     </div>
+
   );
 }
 
