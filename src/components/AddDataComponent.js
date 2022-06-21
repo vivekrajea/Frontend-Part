@@ -50,6 +50,22 @@ export const AddDataComponent = () => {
         DataService.getDataById(id).then((response) => {
             // console.log(response);
             setcode(response.data.code)
+            setcodeHRIS(response.data.code)
+            setname(response.data.code)
+            setabbrName(response.data.code)
+            setregNo(response.data.code)
+            setlogo(response.data.code)
+            setactiveDate(response.data.code)
+            setisActive(response.data.code)
+            setcreatedOn(response.data.code)
+            setcreatedBy(response.data.code)
+            setlastModifiedOn(response.data.code)
+            setlastModifiedBy(response.data.code)
+            setdeactivatedBy(response.data.code)
+            setdeactivatedOn(response.data.code)
+            setreactivatedBy(response.data.code)
+            setreactivatedOn(response.data.code)
+            
         }).catch(error => {
             console.log(error)
         })
